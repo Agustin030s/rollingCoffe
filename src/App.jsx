@@ -6,6 +6,7 @@ import Administrador from "./components/pages/Administrador";
 import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AgregarProducto from "./components/pages/AgregarProducto";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+        <Route exact path="/agregarProducto" element={<AgregarProducto></AgregarProducto>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>

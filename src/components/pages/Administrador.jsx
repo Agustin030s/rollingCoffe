@@ -1,4 +1,5 @@
 import { Button, Col, Container, Row, Table, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
   return (
