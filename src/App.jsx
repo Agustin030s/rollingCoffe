@@ -11,8 +11,8 @@ function App() {
   return (
     <>
     <Menu></Menu>
-    <Inicio></Inicio>
-    {/* <Administrador></Administrador> */}
+    {/* <Inicio></Inicio> */}
+    <Administrador></Administrador>
     <Footer></Footer>
     </>
   )

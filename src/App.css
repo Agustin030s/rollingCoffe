@@ -17,3 +17,8 @@
   width: 100%;
   object-fit: cover;
 }
+
+.imgTabla{
+  width: 150px;
+  height: 150px;
+}
