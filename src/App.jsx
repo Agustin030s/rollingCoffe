@@ -4,6 +4,7 @@ import Footer from './components/common/Footer'
 import Menu from './components/common/Menu'
 import Administrador from './components/pages/Administrador'
 import Inicio from './components/pages/Inicio'
+import Error404 from './components/pages/Error404';
 
 function App() {
  
@@ -12,7 +13,8 @@ function App() {
     <>
     <Menu></Menu>
     {/* <Inicio></Inicio> */}
-    <Administrador></Administrador>
+    {/* <Administrador></Administrador> */}
+    <Error404></Error404>
     <Footer></Footer>
     </>
   )

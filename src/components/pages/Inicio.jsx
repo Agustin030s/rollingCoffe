@@ -12,7 +12,7 @@ const Inicio = () => {
       </section>
       <section className="container mainContainer my-3">
         <h1 className="display-3 mb-4">Nuestros Productos</h1>
-        <Row>
+        <Row className="justify-content-around">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
