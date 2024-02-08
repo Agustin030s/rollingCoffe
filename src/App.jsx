@@ -7,6 +7,7 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AgregarProducto from "./components/pages/AgregarProducto";
+import DetalleProducto from "./components/pages/DetalleProducto";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
         <Route exact path="/agregarProducto" element={<AgregarProducto></AgregarProducto>}></Route>
+        <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>
       <Footer></Footer>
