@@ -15,10 +15,10 @@ const ItemProducto = () => {
       <td>Cafeteria</td>
       <td className="text-center">
         <Button variant="warning" className="me-2 mb-2">
-          <i class="bi bi-pencil-square"></i>
+          <i className="bi bi-pencil-square"></i>
         </Button>
         <Button variant="danger" className="me-2 mb-2">
-          <i class="bi bi-trash3"></i>
+          <i className="bi bi-trash3"></i>
         </Button>
       </td>
     </tr>

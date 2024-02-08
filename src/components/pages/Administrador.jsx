@@ -12,7 +12,7 @@ const Administrador = () => {
         </Col>
         <Col md="4" className="text-md-end text-center">
           <Button>
-            <i class="bi bi-file-earmark-plus"></i>
+            <i className="bi bi-file-earmark-plus"></i>
           </Button>
         </Col>
       </Row>
