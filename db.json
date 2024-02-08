@@ -10,5 +10,11 @@
             "imagen": "cafecito.png",
             "disponible": true
         }
+    ],
+    "usuarios":[
+        {
+            "email": "admin@admin.com",
+            "password": "ABC1234"
+        }
     ]
 }
