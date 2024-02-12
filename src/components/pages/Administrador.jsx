@@ -11,9 +11,9 @@ const Administrador = () => {
           <hr />
         </Col>
         <Col md="4" className="text-md-end text-center">
-          <Button>
+          <Link className="btn btn-primary" to="/administrador/crear">
             <i className="bi bi-file-earmark-plus"></i>
-          </Button>
+          </Link>
         </Col>
       </Row>
       <Table responsive striped hover bordered className="my-4">

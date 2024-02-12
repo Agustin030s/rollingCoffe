@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
-        <Route exact path="/agregarProducto" element={<AgregarProducto></AgregarProducto>}></Route>
+        <Route exact path="/administrador/crear" element={<AgregarProducto></AgregarProducto>}></Route>
         <Route exact path="/detalleProducto" element={<DetalleProducto></DetalleProducto>}></Route>
         <Route path="*" element={<Error404></Error404>}></Route>
       </Routes>

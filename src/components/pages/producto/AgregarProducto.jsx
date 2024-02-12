@@ -56,6 +56,10 @@ const AgregarProducto = () => {
           <Form.Label>Categoria*</Form.Label>
           <Form.Select required>
             <option>Seleccione una categoria</option>
+            <option value="Infusiones">Infusiones</option>
+            <option value="Batidos">Batidos</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Control.Feedback type="invalid">
             Debes seleccionar una categoria.
