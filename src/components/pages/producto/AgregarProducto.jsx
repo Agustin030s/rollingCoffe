@@ -1,56 +1,76 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const AgregarProducto = () => {
-  const [validated, setValidated] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    setValidated(true);
+  const onSubmit = (producto) => {
+    console.log(producto);
   };
 
   return (
     <Container className="mainContainer">
       <h1 className="text-center display-3">Nuevo Producto</h1>
       <hr />
-      <Form noValidate validated={validated} onSubmit={handleSubmit} className="my-4">
+      <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="producto">
           <Form.Label>Producto*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej. Capuccino"
-            required
+            placeholder="Ej. Cafe"
+            {...register("nombreProducto", {
+              required: "El nombre del producto es obligatorio",
+              minLength: {
+                value: 2,
+                message: "Debe ingresar como minimo 2 caracteres",
+              },
+              maxLength: {
+                value: 30,
+                message: "Debe ingresar como máximo 30 caracteres",
+              },
+            })
+          }
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Debes ingresar un producto.
-          </Form.Control.Feedback>
+          <Form.Text className="text-danger">
+            {errors.nombreProducto?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="precio">
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
             placeholder="Ej. 1500"
-            required
+            {...register("precio", {
+              required: "El precio es obligatorio",
+              min: {
+                value: 2,
+                message: "Debe ingresar como minimo 2 números",
+              },
+              max: {
+                value: 5,
+                message: "Debe ingresar como máximo 5 números",
+              },
+            })
+          }
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Debes ingresar un precio.
-          </Form.Control.Feedback>
+          <Form.Text className="text-danger">
+            {errors.precio?.message}
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="imagen">
           <Form.Label>Imagen URL*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej. archivo.png"
-            required
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
+          <Form.Text className="text-danger">
             Debes ingresar un url de una imagen.
-          </Form.Control.Feedback>
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="categoria">
           <Form.Label>Categoria*</Form.Label>
@@ -61,9 +81,9 @@ const AgregarProducto = () => {
             <option value="Dulce">Dulce</option>
             <option value="Salado">Salado</option>
           </Form.Select>
-          <Form.Control.Feedback type="invalid">
+          <Form.Text className="text-danger">
             Debes seleccionar una categoria.
-          </Form.Control.Feedback>
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="descripcionBreve">
           <Form.Label>Descripción Breve*</Form.Label>
@@ -73,9 +93,9 @@ const AgregarProducto = () => {
             placeholder="Descripcion breve"
             required
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
+          <Form.Text className="text-danger">
             Debes ingresar la descripción breve.
-          </Form.Control.Feedback>
+          </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="descripcionAmplia">
           <Form.Label>Descripción Amplia*</Form.Label>
@@ -85,11 +105,13 @@ const AgregarProducto = () => {
             placeholder="Descripcion amplia"
             required
           ></Form.Control>
-          <Form.Control.Feedback type="invalid">
+          <Form.Text className="text-danger">
             Debes ingresar la descripción amplia.
-          </Form.Control.Feedback>
+          </Form.Text>
         </Form.Group>
-        <Button type="submit" variant="success">Guardar</Button>
+        <Button type="submit" variant="success">
+          Guardar
+        </Button>
       </Form>
     </Container>
   );
