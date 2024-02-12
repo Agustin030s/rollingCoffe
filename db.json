@@ -5,8 +5,8 @@
             "nombreProducto": "Capuccino",
             "precio": 1500,
             "categoria": "Bebida Caliente",
-            "descripcion-breve": "Siempre viene bien un cafe al paso",
-            "descripcion-amplia": "Siempre viene bien un cafe al paso",
+            "descripcionBreve": "Siempre viene bien un cafe al paso",
+            "descripcionAmplia": "Siempre viene bien un cafe al paso",
             "imagen": "cafecito.png",
             "disponible": true
         }

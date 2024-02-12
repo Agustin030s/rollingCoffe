@@ -91,10 +91,21 @@ const AgregarProducto = () => {
             as="textarea"
             rows={3}
             placeholder="Descripcion breve"
-            required
+            {...register("descripcionBreve", {
+              required: "La descripción breve es obligatoria",
+              min: {
+                value: 5,
+                message: "Debe ingresar como minimo 5 caracteres",
+              },
+              max: {
+                value: 150,
+                message: "Debe ingresar como máximo 150 caracteres",
+              },
+            })
+          }
           ></Form.Control>
           <Form.Text className="text-danger">
-            Debes ingresar la descripción breve.
+            {errors.descripcionBreve?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="descripcionAmplia">
@@ -103,10 +114,21 @@ const AgregarProducto = () => {
             as="textarea"
             rows={3}
             placeholder="Descripcion amplia"
-            required
+            {...register("descripcionAmplia", {
+              required: "La descripción amplia es obligatoria",
+              min: {
+                value: 15,
+                message: "Debe ingresar como minimo 15 caracteres",
+              },
+              max: {
+                value: 300,
+                message: "Debe ingresar como máximo 300 caracteres",
+              },
+            })
+          }
           ></Form.Control>
           <Form.Text className="text-danger">
-            Debes ingresar la descripción amplia.
+            {errors.descripcionAmplia?.message}
           </Form.Text>
         </Form.Group>
         <Button type="submit" variant="success">
