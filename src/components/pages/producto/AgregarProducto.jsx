@@ -33,8 +33,7 @@ const AgregarProducto = () => {
                 value: 30,
                 message: "Debe ingresar como máximo 30 caracteres",
               },
-            })
-          }
+            })}
           ></Form.Control>
           <Form.Text className="text-danger">
             {errors.nombreProducto?.message}
@@ -55,8 +54,7 @@ const AgregarProducto = () => {
                 value: 5,
                 message: "Debe ingresar como máximo 5 números",
               },
-            })
-          }
+            })}
           ></Form.Control>
           <Form.Text className="text-danger">
             {errors.precio?.message}
@@ -67,14 +65,26 @@ const AgregarProducto = () => {
           <Form.Control
             type="text"
             placeholder="Ej. archivo.png"
+            {...register("imagen", {
+              required: "La imagen es obligatorio",
+              pattern: {
+                value: /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i,
+                message:
+                  "Debe ingresar una URL de imagen valida (png, jpg, jpeg, gif, png, svg)",
+              },
+            })}
           ></Form.Control>
           <Form.Text className="text-danger">
-            Debes ingresar un url de una imagen.
+            {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="categoria">
           <Form.Label>Categoria*</Form.Label>
-          <Form.Select required>
+          <Form.Select
+            {...register("categoria", {
+              required: "La categoria es obligatoria",
+            })}
+          >
             <option>Seleccione una categoria</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
@@ -82,7 +92,7 @@ const AgregarProducto = () => {
             <option value="Salado">Salado</option>
           </Form.Select>
           <Form.Text className="text-danger">
-            Debes seleccionar una categoria.
+            {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="descripcionBreve">
@@ -101,8 +111,7 @@ const AgregarProducto = () => {
                 value: 150,
                 message: "Debe ingresar como máximo 150 caracteres",
               },
-            })
-          }
+            })}
           ></Form.Control>
           <Form.Text className="text-danger">
             {errors.descripcionBreve?.message}
@@ -124,8 +133,7 @@ const AgregarProducto = () => {
                 value: 300,
                 message: "Debe ingresar como máximo 300 caracteres",
               },
-            })
-          }
+            })}
           ></Form.Control>
           <Form.Text className="text-danger">
             {errors.descripcionAmplia?.message}
