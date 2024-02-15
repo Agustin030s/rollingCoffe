@@ -1,6 +1,6 @@
 import { Button, Container, Form } from "react-bootstrap";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
+import "../../../helpers/queries"
 
 const AgregarProducto = () => {
   const {
@@ -66,7 +66,7 @@ const AgregarProducto = () => {
             type="text"
             placeholder="Ej. archivo.png"
             {...register("imagen", {
-              required: "La imagen es obligatorio",
+              required: "La imagen es obligatoria",
               pattern: {
                 value: /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i,
                 message:
