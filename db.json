@@ -1,20 +1,39 @@
 {
-    "productos":[
-        {
-            "id": "1",
-            "nombreProducto": "Capuccino",
-            "precio": 1500,
-            "categoria": "Bebida Caliente",
-            "descripcionBreve": "Siempre viene bien un cafe al paso",
-            "descripcionAmplia": "Siempre viene bien un cafe al paso",
-            "imagen": "cafecito.png",
-            "disponible": true
-        }
-    ],
-    "usuarios":[
-        {
-            "email": "admin@admin.com",
-            "password": "ABC1234"
-        }
-    ]
+  "productos": [
+    {
+      "id": "1",
+      "nombreProducto": "Capuccino",
+      "precio": 1500,
+      "categoria": "Bebida Caliente",
+      "descripcionBreve": "Siempre viene bien un cafe al paso",
+      "descripcionAmplia": "Siempre viene bien un cafe al paso",
+      "imagen": "cafecito.png",
+      "disponible": true
+    },
+    {
+      "id": "6e6a",
+      "nombreProducto": "Capuccino",
+      "precio": "1500",
+      "imagen": "https://st2.depositphotos.com/5355656/7813/i/450/depositphotos_78138608-stock-photo-a-cup-of-cappuccino.jpg",
+      "categoria": "Seleccione una categoria",
+      "descripcionBreve": "Un riquisimo cafe, infalible",
+      "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
+    },
+    {
+      "id": "bdf3",
+      "nombreProducto": "Capuccino",
+      "precio": "1500",
+      "imagen": "https://st2.depositphotos.com/5355656/7813/i/450/depositphotos_78138608-stock-photo-a-cup-of-cappuccino.jpg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Un riquisimo cafe, infalible",
+      "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "admin@admin.com",
+      "password": "ABC1234",
+      "id": "c4e3"
+    }
+  ]
 }

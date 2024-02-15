@@ -1,6 +1,6 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import "../../../helpers/queries"
+import { crearProductoAPI } from "../../../helpers/queries";
 
 const AgregarProducto = () => {
   const {
@@ -9,8 +9,11 @@ const AgregarProducto = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (producto) => {
+  const onSubmit = async (producto) => {
     console.log(producto);
+    // Llamar a la funcion encargada de crear un producto
+    const respuesta = await crearProductoAPI(producto);
+    console.log(respuesta);
   };
 
   return (
@@ -50,10 +53,10 @@ const AgregarProducto = () => {
                 value: 2,
                 message: "Debe ingresar como minimo 2 números",
               },
-              max: {
-                value: 5,
-                message: "Debe ingresar como máximo 5 números",
-              },
+              // max: {
+              //   value: 5,
+              //   message: "Debe ingresar como máximo 5 números",
+              // },
             })}
           ></Form.Control>
           <Form.Text className="text-danger">
@@ -85,7 +88,7 @@ const AgregarProducto = () => {
               required: "La categoria es obligatoria",
             })}
           >
-            <option>Seleccione una categoria</option>
+            <option value="">Seleccione una categoria</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>
             <option value="Dulce">Dulce</option>
