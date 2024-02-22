@@ -1,18 +1,42 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../../../helpers/queries";
+import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const FormularioProducto = ({editar, titulo}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
+    setValue
   } = useForm();
 
+  const {id} = useParams();
+
+  useEffect(() =>{
+    if(editar){
+      cargarDatosProducto();
+    }
+  }, [])
+
+  const cargarDatosProducto = async () =>{
+    const respuesta = await obtenerProductoAPI(id);
+    if(respuesta.status === 200){
+      const productoBuscado = await respuesta.json();
+      setValue("nombreProducto", productoBuscado.nombreProducto);
+      setValue("precio", productoBuscado.precio);
+      setValue("imagen", productoBuscado.imagen);
+      setValue("categoria", productoBuscado.categoria);
+      setValue("descripcionBreve", productoBuscado.descripcionBreve);
+      setValue("descripcionAmplia", productoBuscado.descripcionAmplia);
+    }
+  }
+
   const onSubmit = async (producto) => {
-    if(editar === true){
+    if(editar){
       //aqui agregar la solicitud a la api para editar
       console.log('aqui tendria que editar');
     }else{
