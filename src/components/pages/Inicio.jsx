@@ -1,7 +1,29 @@
 import { Image, Button, Card, Row, Col } from "react-bootstrap";
 import CardProducto from "./producto/CardProducto";
+import { useEffect, useState } from "react";
+import { leerProductoAPI } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const Inicio = () => {
+  const [listaProductos, setListaProductos] = useState([]);
+
+  useEffect(() => {
+    obtenerProductos();
+  }, [])
+
+  const obtenerProductos = async () =>{
+    const respuesta = await leerProductoAPI();
+    if(respuesta.status === 200){
+      const datos = await respuesta.json();
+      setListaProductos(datos);
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Intenta está operación en unos minutos`,
+        icon: "error"
+      });
+    }
+  }
   return (
     <>
       <section className="mb-4">
@@ -13,10 +35,7 @@ const Inicio = () => {
       <section className="container mainContainer my-3">
         <h1 className="display-3 mb-4">Nuestros Productos</h1>
         <Row className="justify-content-around">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {listaProductos.map(producto => <CardProducto key={producto.id} producto={producto}></CardProducto>)}
         </Row>
       </section>
     </>
