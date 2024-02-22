@@ -1,25 +1,6 @@
 {
   "productos": [
     {
-      "id": "1",
-      "nombreProducto": "Capuccino",
-      "precio": 1500,
-      "categoria": "Bebida Caliente",
-      "descripcionBreve": "Siempre viene bien un cafe al paso",
-      "descripcionAmplia": "Siempre viene bien un cafe al paso",
-      "imagen": "cafecito.png",
-      "disponible": true
-    },
-    {
-      "id": "6e6a",
-      "nombreProducto": "Capuccino",
-      "precio": "1500",
-      "imagen": "https://st2.depositphotos.com/5355656/7813/i/450/depositphotos_78138608-stock-photo-a-cup-of-cappuccino.jpg",
-      "categoria": "Seleccione una categoria",
-      "descripcionBreve": "Un riquisimo cafe, infalible",
-      "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
-    },
-    {
       "id": "bdf3",
       "nombreProducto": "Capuccino",
       "precio": "1500",
@@ -29,15 +10,6 @@
       "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
     },
     {
-      "id": "ae76",
-      "nombreProducto": "Brownie",
-      "precio": "1199",
-      "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
-      "categoria": "Dulce",
-      "descripcionBreve": "Un delicioso brownie que nunca puede faltar.",
-      "descripcionAmplia": "Un brownie es una buena compañia con cualquier infusion, animate a probar una porcion de este riquisimo postre."
-    },
-    {
       "id": "f50e",
       "nombreProducto": "Galletas con chocolate x5",
       "precio": "999",
@@ -45,6 +17,15 @@
       "categoria": "Dulce",
       "descripcionBreve": "Riquisimas galletas, muy accesibles.",
       "descripcionAmplia": "Estás galletas son ideales para acompañar una tarde de mates con amigos, aprovecha esta promoción y llevate las galletas."
+    },
+    {
+      "id": "4232",
+      "nombreProducto": "Cafe doble",
+      "precio": "899",
+      "imagen": "https://images.pexels.com/photos/15002639/pexels-photo-15002639/free-photo-of-kitap-ve-kahve.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Cafe doble para despertar!",
+      "descripcionAmplia": "Nunca viene mal un buen cafe doble para comenzar la mañana, tomate uno y comenza el dia con alegria."
     }
   ],
   "usuarios": [
