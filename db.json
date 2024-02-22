@@ -10,15 +10,6 @@
       "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
     },
     {
-      "id": "f50e",
-      "nombreProducto": "Galletas con chocolate x5",
-      "precio": "999",
-      "imagen": "https://images.pexels.com/photos/89690/pexels-photo-89690.jpeg",
-      "categoria": "Dulce",
-      "descripcionBreve": "Riquisimas galletas, muy accesibles.",
-      "descripcionAmplia": "Estás galletas son ideales para acompañar una tarde de mates con amigos, aprovecha esta promoción y llevate las galletas."
-    },
-    {
       "id": "4232",
       "nombreProducto": "Cafe doble",
       "precio": "899",
@@ -26,6 +17,15 @@
       "categoria": "Infusiones",
       "descripcionBreve": "Cafe doble para despertar!",
       "descripcionAmplia": "Nunca viene mal un buen cafe doble para comenzar la mañana, tomate uno y comenza el dia con alegria."
+    },
+    {
+      "id": "b1dd",
+      "nombreProducto": "Brownie con chocolate",
+      "precio": "2400",
+      "imagen": "https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg",
+      "categoria": "Dulce",
+      "descripcionBreve": "Un brownie nunca viene mal.",
+      "descripcionAmplia": "Disfruta de este riquisimo brownie con chispas de chocolate, no te defraudara."
     }
   ],
   "usuarios": [
