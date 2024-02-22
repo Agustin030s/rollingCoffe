@@ -35,6 +35,15 @@
       "categoria": "Dulce",
       "descripcionBreve": "Riquisimas galletas, muy accesibles.",
       "descripcionAmplia": "Estás galletas son ideales para acompañar una tarde de mates con amigos, aprovecha esta promoción y llevate las galletas."
+    },
+    {
+      "id": "858a",
+      "nombreProducto": "Cafe doble",
+      "precio": "900",
+      "imagen": "https://images.pexels.com/photos/15002639/pexels-photo-15002639/free-photo-of-kitap-ve-kahve.jpeg",
+      "categoria": "Infusiones",
+      "descripcionBreve": "lallalalalalallalalalala ",
+      "descripcionAmplia": "lalalsldkasndlkasdkñasdkaspkdpoaksdk "
     }
   ],
   "usuarios": [

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 
-const AgregarProducto = () => {
+const FormularioProducto = ({editar, titulo}) => {
   const {
     register,
     handleSubmit,
@@ -12,31 +12,34 @@ const AgregarProducto = () => {
   } = useForm();
 
   const onSubmit = async (producto) => {
-    console.log(producto);
-    // Llamar a la funcion encargada de crear un producto
-    const respuesta = await crearProductoAPI(producto);
-    //agregar mensaje si el codigo es 201
-    if(respuesta.status === 201){
-      Swal.fire({
-        title: "Producto creado",
-        text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
-        icon: "success"
-      });
-      //limpiar formulario
-      reset();
+    if(editar === true){
+      //aqui agregar la solicitud a la api para editar
+      console.log('aqui tendria que editar');
     }else{
-      Swal.fire({
-        title: "Ocurrio un error",
-        text: `El producto "${producto.nombreProducto}" no pudo ser creado, intentelo nuevamente dentro de unos minutos`,
-        icon: "error"
-      });
+      // Llamar a la funcion encargada de crear un producto
+      const respuesta = await crearProductoAPI(producto);
+      //agregar mensaje si el codigo es 201
+      if(respuesta.status === 201){
+        Swal.fire({
+          title: "Producto creado",
+          text: `El producto "${producto.nombreProducto}" fue creado correctamente`,
+          icon: "success"
+        });
+        //limpiar formulario
+        reset();
+      }else{
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `El producto "${producto.nombreProducto}" no pudo ser creado, intentelo nuevamente dentro de unos minutos`,
+          icon: "error"
+        });
+      }
     }
-    console.log(respuesta);
   };
 
   return (
     <Container className="mainContainer">
-      <h1 className="text-center display-3">Nuevo Producto</h1>
+      <h1 className="text-center display-3">{titulo}</h1>
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="producto">
@@ -168,4 +171,4 @@ const AgregarProducto = () => {
   );
 };
 
-export default AgregarProducto;
+export default FormularioProducto;
