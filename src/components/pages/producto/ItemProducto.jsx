@@ -5,18 +5,19 @@ const ItemProducto = ({producto}) => {
 
   const borrarProducto = () =>{
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "¿Estás seguro de eliminar este producto?",
+      text: "No se puede revertir este paso",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonText: "Borrar",
+      cancelButtonText: "Cancelar"
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
+          title: "Producto eliminado!",
+          text: `El producto ${producto.nombreProducto} fue eliminado correctamente`,
           icon: "success"
         });
       }
