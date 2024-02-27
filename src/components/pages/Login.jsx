@@ -9,14 +9,17 @@ const Login = () => {
     reset,
   } = useForm();
 
+  const onSubmit = (usuario) => {
+    console.log(usuario);
+  };
+
   return (
     <>
       <h1 className="text-center display-3 my-3">Inicio de Sesión</h1>
-
       <Container className="mainContainer my-3">
         <Row className="justify-content-center align-items-center">
           <Col md="4">
-            <Form>
+            <Form onSubmit={handleSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="email">
                 <Form.Label>Email: </Form.Label>
                 <Form.Control
@@ -38,13 +41,15 @@ const Login = () => {
 
               <Form.Group className="mb-3" controlId="password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" 
-                {...register("password",{
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  {...register("password", {
                     required: "El password es obligatorio",
-                }
-                )}/>
+                  })}
+                />
                 <Form.Text className="text-danger">
-                    {errors.password?.message}
+                  {errors.password?.message}
                 </Form.Text>
               </Form.Group>
               <Form.Group className="text-center">
