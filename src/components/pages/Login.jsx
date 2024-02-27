@@ -1,5 +1,8 @@
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { iniciarSesion } from "../../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -9,8 +12,25 @@ const Login = () => {
     reset,
   } = useForm();
 
+  const navegacion = useNavigate();
+
   const onSubmit = (usuario) => {
     console.log(usuario);
+    //pedir a la api si existe el usuario
+    if(iniciarSesion(usuario)){
+      Swal.fire({
+        title: "Bienvenido",
+        text: `Ingresaste al sistema RollingCoffe`,
+        icon: "success"
+      });
+      navegacion('/administrador');
+    }else{
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Las credenciales ingresadas son invalidas`,
+        icon: "error"
+      });
+    }
   };
 
   return (
@@ -46,6 +66,14 @@ const Login = () => {
                   placeholder="Password"
                   {...register("password", {
                     required: "El password es obligatorio",
+                    minLength:{
+                      value: 8,
+                      message: "La contraseña debe tener como minimo 8 caracteres"
+                    },
+                    maxLength:{
+                      value: 15,
+                      message: "La contraseña debe tener como máximo 15 caracteres"
+                    }
                   })}
                 />
                 <Form.Text className="text-danger">
