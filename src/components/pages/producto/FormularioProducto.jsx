@@ -1,9 +1,9 @@
 import { Button, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
+import { crearProductoAPI, modificarProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const FormularioProducto = ({editar, titulo}) => {
   const {
@@ -15,6 +15,7 @@ const FormularioProducto = ({editar, titulo}) => {
   } = useForm();
 
   const {id} = useParams();
+  const navegacion = useNavigate();
 
   useEffect(() =>{
     if(editar){
@@ -38,6 +39,22 @@ const FormularioProducto = ({editar, titulo}) => {
   const onSubmit = async (producto) => {
     if(editar){
       //aqui agregar la solicitud a la api para editar
+      const respuesta = await modificarProductoAPI(producto, id);
+      if(respuesta.status === 200){
+        Swal.fire({
+          title: "Producto modificado",
+          text: `El producto "${producto.nombreProducto}" fue modificado correctamente`,
+          icon: "success"
+        });
+        //redireccionar
+        navegacion('/administrador');
+      }else{
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `El producto "${producto.nombreProducto}" no pudo ser modificado, intentelo nuevamente dentro de unos minutos`,
+          icon: "error"
+        });
+      }
       console.log('aqui tendria que editar');
     }else{
       // Llamar a la funcion encargada de crear un producto

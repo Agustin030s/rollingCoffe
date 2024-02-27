@@ -10,22 +10,22 @@
       "descripcionAmplia": "Riquisimo cafe, indiscutible a la hora de elegir una infusion, no te podes perder este clásico."
     },
     {
-      "id": "ae76",
       "nombreProducto": "Brownie",
-      "precio": "1199",
+      "precio": "2000",
       "imagen": "https://images.pexels.com/photos/887853/pexels-photo-887853.jpeg",
       "categoria": "Dulce",
       "descripcionBreve": "Un delicioso brownie que nunca puede faltar.",
-      "descripcionAmplia": "Un brownie es una buena compañia con cualquier infusion, animate a probar una porcion de este riquisimo postre."
+      "descripcionAmplia": "Un brownie es una buena compañia con cualquier infusion, animate a probar una porcion de este riquisimo postre.",
+      "id": "ae76"
     },
     {
-      "id": "f50e",
       "nombreProducto": "Galletas con chocolate x5",
-      "precio": "999",
+      "precio": "1500",
       "imagen": "https://images.pexels.com/photos/89690/pexels-photo-89690.jpeg",
       "categoria": "Dulce",
       "descripcionBreve": "Riquisimas galletas, muy accesibles.",
-      "descripcionAmplia": "Estás galletas son ideales para acompañar una tarde de mates con amigos, aprovecha esta promoción y llevate las galletas."
+      "descripcionAmplia": "Estás galletas son ideales para acompañar una tarde de mates con amigos, aprovecha esta promoción y llevate las galletas.",
+      "id": "f50e"
     },
     {
       "id": "858a",

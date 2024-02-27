@@ -48,3 +48,20 @@ export const obtenerProductoAPI = async (id) => {
     console.log(error);
   }
 };
+
+//PUT --> modificar completo un producto
+export const modificarProductoAPI = async (producto, id) => {
+  try {
+    const respuesta = await fetch(`${URI_Producto}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(producto),
+    });
+    console.log(respuesta);
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
