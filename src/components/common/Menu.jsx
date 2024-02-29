@@ -1,8 +1,14 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/Coffee_Logo.png";
 
-const Menu = ({ usuarioLogueado }) => {
+const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const logout = () =>{
+    //quitar session del storage
+    sessionStorage.removeItem('loginRollingCoffe');
+    //limpiar el state
+    setUsuarioLogueado("");
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -21,9 +27,12 @@ const Menu = ({ usuarioLogueado }) => {
               Inicio
             </NavLink>
             {usuarioLogueado.length > 0 ? (
+              <>
               <NavLink end to="/administrador" className="nav-link">
                 Administrador
               </NavLink>
+              <Button>Logout</Button>
+              </>
             ) : (
               <NavLink end to="/login" className="nav-link">
                 Login
