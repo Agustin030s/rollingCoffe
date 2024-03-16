@@ -1,24 +1,41 @@
-import { Container, Row, Col, Image, Badge } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { obtenerProductoAPI } from "../../helpers/queries";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import ProductoCompleto from "./producto/ProductoCompleto";
 
 const DetalleProducto = () => {
+  const { id } = useParams();
+  const [producto, setProducto] = useState(null);
+
+  useEffect(() => {
+    buscarProducto();
+  }, []);
+
+  const buscarProducto = async () => {
+    const respuesta = await obtenerProductoAPI(id);
+    if (respuesta.status === 200) {
+      const productoBuscado = await respuesta.json();
+      setProducto(productoBuscado);
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `Intenta está operación en unos minutos`,
+        icon: "error",
+      });
+    }
+  };
+
+  const mostrarComponente = producto ? (
+    <ProductoCompleto producto={producto}></ProductoCompleto>
+  ) : (
+    <Spinner animation="grow" variant="warning"></Spinner>
+  );
+
   return (
-    <Container className="my-5">
-      <Row className="justify-content-center align-items-center">
-        <Col md="6">
-          <Image
-            src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=1870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            fluid
-            rounded
-          ></Image>
-        </Col>
-        <Col md="6">
-          <Badge className="mb-2">Bebida Caliente</Badge>
-          <h2 className="display-5">Café Capuccino</h2>
-          <hr />
-          <p className="lead">Este cafe te va a deleitar con su espectacular gusto, esta hecho con cafe exportado de colombia (descipción amplia)</p>
-          <p className="lead"><b>Precio: </b><Badge pill bg="success">$1500</Badge></p>
-        </Col>
-      </Row>
+    <Container className="my-5 mainContainer">
+      {mostrarComponente}
     </Container>
   );
 };

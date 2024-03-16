@@ -27,3 +27,19 @@
 #descripcionBreve, #descripcionAmplia {
   resize: none;
 }
+
+.cardImg{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.imgDetalle{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.descProducto{
+  height: 80px;
+}
