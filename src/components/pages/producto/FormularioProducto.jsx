@@ -112,13 +112,13 @@ const FormularioProducto = ({editar, titulo}) => {
             {...register("precio", {
               required: "El precio es obligatorio",
               min: {
-                value: 2,
+                value: 100,
                 message: "Debe ingresar como minimo 2 números",
               },
-              // max: {
-              //   value: 5,
-              //   message: "Debe ingresar como máximo 5 números",
-              // },
+              max: {
+                value: 10000,
+                message: "Debe ingresar como máximo 5 números",
+              },
             })}
           ></Form.Control>
           <Form.Text className="text-danger">
@@ -195,7 +195,7 @@ const FormularioProducto = ({editar, titulo}) => {
                 message: "Debe ingresar como minimo 15 caracteres",
               },
               max: {
-                value: 300,
+                value: 1000,
                 message: "Debe ingresar como máximo 300 caracteres",
               },
             })}
