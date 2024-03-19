@@ -41,7 +41,7 @@ const Administrador = () => {
       </Row>
       <Table responsive striped hover bordered className="my-4">
         <thead className="text-center">
-          <th>Cod</th>
+          {/* <th>Cod</th> */}
           <th>Producto</th>
           <th>Precio</th>
           <th>URL de imagen</th>
@@ -49,7 +49,7 @@ const Administrador = () => {
           <th>Opciones</th>
         </thead>
         <tbody>
-          {productos.map((producto) => <ItemProducto key={producto.id} producto={producto} setProductos={setProductos}></ItemProducto>)}
+          {productos.map((producto) => <ItemProducto key={producto._id} producto={producto} setProductos={setProductos}></ItemProducto>)}
         </tbody>
       </Table>
     </Container>

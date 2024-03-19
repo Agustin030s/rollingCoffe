@@ -35,7 +35,7 @@ const Inicio = () => {
       <section className="container mainContainer my-3">
         <h1 className="display-3 mb-4">Nuestros Productos</h1>
         <Row className="justify-content-around">
-          {listaProductos.map(producto => <CardProducto key={producto.id} producto={producto}></CardProducto>)}
+          {listaProductos.map(producto => <CardProducto key={producto._id} producto={producto}></CardProducto>)}
         </Row>
       </section>
     </>

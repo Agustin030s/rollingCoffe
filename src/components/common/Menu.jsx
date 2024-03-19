@@ -26,6 +26,9 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             <NavLink end to="/" className="nav-link">
               Inicio
             </NavLink>
+            <NavLink end to="/registro" className="nav-link">
+              Registro
+            </NavLink>
             {usuarioLogueado.length > 0 ? (
               <>
               <NavLink end to="/administrador" className="nav-link">
@@ -38,9 +41,6 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 Login
               </NavLink>
             )}
-            <NavLink end to="/registro" className="nav-link">
-              Registro
-            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

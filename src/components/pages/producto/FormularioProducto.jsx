@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { crearProductoAPI, modificarProductoAPI, obtenerProductoAPI } from "../../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const FormularioProducto = ({editar, titulo}) => {
   const {
@@ -204,9 +204,12 @@ const FormularioProducto = ({editar, titulo}) => {
             {errors.descripcionAmplia?.message}
           </Form.Text>
         </Form.Group>
-        <Button type="submit" variant="success">
+        <Button type="submit" variant="success" className="me-2">
           Guardar
         </Button>
+        <Link className="btn btn-info" to="/administrador">
+          Volver
+        </Link>
       </Form>
     </Container>
   );
